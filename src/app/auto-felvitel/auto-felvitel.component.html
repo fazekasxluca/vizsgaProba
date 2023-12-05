@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <h1 class="my-3">Auto felvitel</h1>
+        <div class="col-12 my-3">
+
+            <label for="" class="form-label">Gyarto</label> <br>
+            <input class="form-control" type="text" [(ngModel)]="_gyarto" name="" id=""><br>
+
+            <label for="" class="form-label">Tipus</label><br>
+            <input class="form-control" type="text" [(ngModel)]="_tipus" name="" id=""><br>
+            <br>
+            <label for="" class="form-label">Rendszam</label><br>
+            <input type="number" class="form-control" [(ngModel)]="_rendszam" name="" id="">
+            <br>
+            <label for="" class="form-label">Hengerurtartalom</label><br>
+            <input type="number" class="form-control" [(ngModel)]="_hengerUrTartalom" name="" id="">
+            <br>
+
+            <button type="button" (click)="felvitel()" class="btn btn-primary my-4 form-control">Felvitel</button>
+            <br><br>
+
+        </div>
+    </div>
+
+    <div class="col-12 my-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Gyarto</th>
+                    <th>Tipus</th>
+                    <th>Rendszam</th>
+                    <th>Hengerurtartalom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let b of autokTomb">
+                    <th>{{b.gyarto}}</th>
+                    <th>{{b.tipus}}</th>
+                    <th>{{b.rendszam}}</th>
+                    <th>{{b.hengerUrTaratalom}}</th>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+     
+    <button type="button" (click)="osszesFVG()">Eredmeny</button>
+    <div class="col-12 my-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Legnagyobb hengerUrTaratalomu</th>
+                    <th>ElsoTalalatOpelTpusa</th>
+                    <th>1500CCM-nél nagyobb ccm</th>
+                </tr>
+            </thead>
+            <b></b>
+            <tbody>
+                <th>{{maxHengUrTart}}</th>
+                <th>{{talaltElsoTipus}}</th>
+                <th>{{db1500cmm}}</th>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

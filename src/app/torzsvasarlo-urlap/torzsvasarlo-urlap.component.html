@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+ <h1 class="my-3">Torzsvasarlo Urlap</h1>
+        <div class="col-12 my-3">
+         
+                <label  for="nev" class="form-label" >Nev</label> <br>
+                <input class="form-control" type="text"  [(ngModel)]="_nev" name="" id="_nev"><br>
+                
+                <label for="id" class="form-label" >ID</label><br>
+                <input type="text" class="form-control" [(ngModel)]="_id" name="" id="_id">
+                <br>
+                <label for="szuldatum" class="form-label" >Szuletesi Datum</label><br>
+                <input type="date"  class="form-control"  [(ngModel)]="_szulDatum" name="" id="_szulDatum">
+                <br>
+                <label for="megjegyzes" class="form-label" >Megjegyzes</label><br>
+                <textarea   class="form-control"  name="" [(ngModel)]="_megyjegyzes" id="" cols="30" rows="10"></textarea>
+                 <br>
+                 <label for="hirlevel">Hirlevel</label><br>
+                 <input type="checkbox" [(ngModel)]="_hirlevel" name="" id="_hirlevel">
+
+            <button type="button" (click)="felvitel()" class="btn btn-primary my-4 form-control">Felvitel</button>
+        </div>
+    </div>
+
+
+
+      
+        <div class="col-12 my-4">
+            <table class="table">
+              <thead>
+                <tr>
+                    <th>Nev</th>
+                    <th>ID</th>
+                    <th>Szuletesi datum</th>
+                    <th>Megjegyzes</th>
+                    <th>Hirlevel</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let a of vasarlok">
+
+                    <th>{{a.nev}}</th>
+                    <th>{{a.id}}</th>
+                    <th>{{a.szulDatum}}</th>
+                    <th>{{a.megjegyzes}}</th>
+                    <th>{{a.hirlevel}}</th>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    
+</div>
